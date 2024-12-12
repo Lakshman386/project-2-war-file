@@ -14,24 +14,4 @@ pipeline {
             }
         }
     }
-    stage('upload war file to nexus') {
-            steps {
-                nexusArtifactUploader artifacts: [
-                    [
-                        artifactId: 'hiring',
-                        classifier: '',
-                        file: 'target/hiring.war',
-                        type: 'war'
-                    ]
-                    ],
-                        credentialsId: 'Nexus-cred',
-                        groupId: 'in.javahome',
-                        nexusUrl: '13.201.12.255:8081',
-                        nexusVersion: 'nexus3',
-                        protocol: 'http',
-                        repository: 'chinna-app',
-                        version: '0.1'
-        }
-            }
-  }
-}
+ 
